@@ -4,8 +4,8 @@ project "GLFW"
 	staticruntime "On"
 	warnings "off"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("Binaries/" .. outputdir .. "/%{prj.name}")
+	objdir ("Intermediate/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
@@ -77,7 +77,8 @@ project "GLFW"
 
 	filter "system:windows"
 		systemversion "latest"
-
+		staticruntime "On"
+		
 		files
 		{
 			"src/win32_init.c",
